@@ -99,15 +99,15 @@ namespace cadmium {
         #endif
         }
 
-        [[maybe_unused]] void simulate(long nIterations) {
-            double timeNext = topCoordinator->getTimeNext();
-            while (nIterations-- > 0 && timeNext < std::numeric_limits<double>::infinity()) {
-                this->simulationAdvance(timeNext);
-                timeNext = topCoordinator->getTimeNext();
-            }
-        }
+        // [[maybe_unused]] void simulate(long nIterations) {
+        //     double timeNext = topCoordinator->getTimeNext();
+        //     while (nIterations-- > 0 && timeNext < std::numeric_limits<double>::infinity()) {
+        //         this->simulationAdvance(timeNext);
+        //         timeNext = topCoordinator->getTimeNext();
+        //     }
+        // }
 
-        [[maybe_unused]] void simulate(double timeInterval) {
+        virtual void simulate(double timeInterval) {
             double timeNext = topCoordinator->getTimeNext();
             double timeFinal = topCoordinator->getTimeLast()+timeInterval;
             while(timeNext < timeFinal) {

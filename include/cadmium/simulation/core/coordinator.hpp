@@ -29,6 +29,7 @@
 #include "../../modeling/devs/atomic.hpp"
 #include "../../modeling/devs/coupled.hpp"
 #include "../../modeling/devs/component.hpp"
+#undef min
 
 namespace cadmium {
     //! DEVS sequential coordinator class.
