@@ -89,6 +89,13 @@ namespace cadmium {
                     }
                 }
             }
+            // Log the input
+            for (const auto& inPort: model->getInPorts()) {
+                for (std::size_t i = 0; i < inPort->size(); ++i) {
+                    this->logOutput(time, modelId, model->getId(), inPort->getId(), inPort->logMessage(i));
+                }
+            }
+
             this->logState(time, modelId, model->getId(), model->logState());
         }
     };
